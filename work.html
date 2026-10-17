@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Work — Warisha Portfolio</title>
+
+
+<!-- =====================================================
+     FONTS
+====================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+    /* =====================================================
+       COLORS
+    ====================================================== */
+
+    :root {
+
+        .projects-title {
+    color: #585758;
+}
+        --bg: #000000;
+
+        --card: #aaaaa9;
+
+        --card-light: #d8d8d6;
+
+        --pink: #992d63;
+
+        --pink-deep: #9c4872;
+
+        --brown: #66534b;
+
+        --sage: #a19460;
+
+        --ink: #292929;
+
+        --ink-soft: #434545;
+
+        --shadow: #2b3232;
+
+        --white: #f4f3ef;
+
+        --font-display: 'Silkscreen', monospace;
+
+        --font-mono: 'VT323', monospace;
+
+        --font-body: 'Quicksand', sans-serif;
+        .projects-subtitle {
+
+    margin-top: -18px;
+
+    margin-bottom: 25px;
+
+    color: #796f45;
+
+    font-family: var(--font-mono);
+
+    font-size: 1rem;
+
+    line-height: 1.4;
+
+}
+
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+
+        margin: 0;
+
+        background:
+
+            radial-gradient(
+                circle,
+                rgba(255,255,255,0.10) 1px,
+                transparent 1.4px
+            )
+
+            0 0 / 22px 22px,
+
+            var(--bg);
+
+        color: var(--ink);
+
+        font-family: var(--font-body);
+
+        line-height: 1.6;
+
+        min-height: 100vh;
+
+    }
+
+
+    img,
+    video {
+
+        display: block;
+
+        max-width: 100%;
+
+    }
+
+
+    a {
+        color: inherit;
+    }
+
+
+    ::selection {
+
+        background: var(--pink);
+
+        color: var(--ink);
+
+    }
+
+
+    /* =====================================================
+       TOP NAVIGATION
+    ====================================================== */
+
+    .top-navigation {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 28px 20px 12px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .nav-button {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        min-width: 105px;
+
+        padding: 8px 17px;
+
+        background: var(--card);
+
+        color: var(--ink);
+
+        border: 3px solid var(--ink);
+
+        box-shadow:
+            4px 4px 0 var(--shadow);
+
+        text-decoration: none;
+
+        font-family: var(--font-mono);
+
+        font-size: 1.25rem;
+
+        line-height: 1;
+
+        transition:
+            transform .12s ease,
+            box-shadow .12s ease,
+            background .12s ease;
+
+    }
+
+
+    .nav-button:hover {
+
+        background: var(--card-light);
+
+        transform:
+            translate(2px, 2px);
+
+        box-shadow:
+            2px 2px 0 var(--shadow);
+
+    }
+
+
+    .nav-button.active {
+
+        background: var(--pink);
+
+        box-shadow:
+            4px 4px 0 var(--shadow);
+
+    }
+
+
+    .nav-button.active:hover {
+
+        background: var(--pink);
+
+    }
+
+
+    /* =====================================================
+       PAGE CONTENT
+    ====================================================== */
+
+    .page-content {
+
+        width: 100%;
+
+        min-height: 75vh;
+
+        padding: 28px 22px 90px;
+
+    }
+
+
+    .content-wrapper {
+
+        width: 100%;
+
+        max-width: 980px;
+
+        margin: 0 auto;
+
+    }
+
+
+    /* =====================================================
+       SECTION TITLE
+    ====================================================== */
+
+    .eyebrow {
+
+        font-family: var(--font-mono);
+
+        color: var(--pink);
+
+        font-size: 1.2rem;
+
+        margin: 0 0 4px;
+
+    }
+
+
+    .section-title {
+
+        font-family: var(--font-display);
+
+        font-size:
+            clamp(
+                1.4rem,
+                3.4vw,
+                2rem
+            );
+
+        margin:
+            0 0 25px;
+
+    }
+
+
+    /* =====================================================
+       PROJECT GRID
+    ====================================================== */
+
+    .proj-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(
+                    280px,
+                    1fr
+                )
+            );
+
+        gap: 26px;
+
+    }
+
+
+    /* =====================================================
+       PROJECT WINDOWS
+    ====================================================== */
+
+    .win {
+
+        background: var(--card);
+
+        border:
+            3px solid var(--ink);
+
+        box-shadow:
+            6px 6px 0 var(--shadow);
+
+    }
+
+
+    .proj-card {
+
+        overflow: hidden;
+
+        transition:
+            transform .15s ease,
+            box-shadow .15s ease;
+
+    }
+
+
+    .proj-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            8px 10px 0 var(--shadow);
+
+    }
+
+
+    /* =====================================================
+       WINDOW BAR
+    ====================================================== */
+
+    .win-bar {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 8px;
+
+        padding:
+            8px 12px;
+
+        background:
+
+            linear-gradient(
+                90deg,
+                var(--pink) 0%,
+                var(--pink-deep) 100%
+            );
+
+        border-bottom:
+            3px solid var(--ink);
+
+    }
+
+
+    .win-bar-title {
+
+        font-family: var(--font-mono);
+
+        font-size: 1.05rem;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+
+    }
+
+
+    .win-dots {
+
+        display: flex;
+
+        gap: 6px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .win-dots span {
+
+        width: 11px;
+
+        height: 11px;
+
+        border:
+            2px solid var(--ink);
+
+        background: var(--card);
+
+    }
+
+
+    .win-dots span:nth-child(3) {
+
+        background: var(--sage);
+
+    }
+
+
+    /* =====================================================
+       PROJECT IMAGE
+    ====================================================== */
+
+    .project-image {
+
+        width: 100%;
+
+        aspect-ratio: 16 / 10;
+
+        object-fit: cover;
+
+        border-bottom:
+            3px solid var(--ink);
+
+        background:
+            var(--card-light);
+
+    }
+
+
+    /* =====================================================
+       PROJECT VIDEO
+    ====================================================== */
+
+    .project-video {
+
+        width: 100%;
+
+        aspect-ratio: 16 / 10;
+
+        object-fit: cover;
+
+        border-bottom:
+            3px solid var(--ink);
+
+        background:
+            var(--card-light);
+
+    }
+
+
+    /* =====================================================
+       PLACEHOLDER
+    ====================================================== */
+
+    .thumb-placeholder {
+
+        aspect-ratio: 16 / 10;
+
+        border-bottom:
+            3px solid var(--ink);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        font-family: var(--font-mono);
+
+        font-size: 1.05rem;
+
+        color: var(--ink-soft);
+
+        padding: 16px;
+
+    }
+
+
+    .thumb-placeholder.a {
+
+        background:
+
+            repeating-linear-gradient(
+                45deg,
+                #c79694,
+                #c79694 14px,
+                #d7d7d5 14px,
+                #d7d7d5 28px
+            );
+
+    }
+
+
+    .thumb-placeholder.b {
+
+        background:
+
+            repeating-linear-gradient(
+                -45deg,
+                #9eae8d,
+                #9eae8d 14px,
+                #d7d7d5 14px,
+                #d7d7d5 28px
+            );
+
+    }
+
+
+    /* =====================================================
+       PROJECT BODY
+    ====================================================== */
+
+    .proj-body {
+
+        padding:
+            16px 18px 20px;
+
+    }
+
+
+    .proj-body h2 {
+
+        margin:
+            0 0 8px;
+
+        font-family:
+            var(--font-display);
+
+        font-size: 1rem;
+
+        line-height: 1.5;
+
+    }
+
+
+    .proj-body p {
+
+        margin:
+            0 0 14px;
+
+        color:
+            var(--ink-soft);
+
+        font-size: .98rem;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* =====================================================
+       TAGS
+    ====================================================== */
+
+    .tag-row {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-top: 0;
+
+    }
+
+
+    .tag {
+
+        font-family:
+            var(--font-mono);
+
+        font-size: 1rem;
+
+        background:
+            var(--sage);
+
+        border:
+            2px solid var(--ink);
+
+        padding:
+            3px 10px;
+
+    }
+
+
+    /* =====================================================
+       PROJECT LINKS
+    ====================================================== */
+
+    .proj-links {
+
+        display: flex;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        margin-top: 14px;
+
+    }
+
+
+    .btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        font-family:
+            var(--font-mono);
+
+        font-size: 1rem;
+
+        padding:
+            6px 12px;
+
+        background:
+            var(--pink);
+
+        color:
+            var(--ink);
+
+        border:
+            3px solid var(--ink);
+
+        box-shadow:
+            3px 3px 0 var(--ink);
+
+        text-decoration: none;
+
+        transition:
+            transform .12s ease,
+            box-shadow .12s ease;
+
+    }
+
+
+    .btn:hover {
+
+        transform:
+            translate(
+                1.5px,
+                1.5px
+            );
+
+        box-shadow:
+            1.5px 1.5px 0 var(--ink);
+
+    }
+
+
+    /* =====================================================
+       ADD PROJECT PLACEHOLDER
+    ====================================================== */
+
+    .proj-card--ghost {
+
+        border:
+            3px dashed var(--brown);
+
+        box-shadow: none;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            30px 20px;
+
+        color:
+            var(--ink-soft);
+
+        font-family:
+            var(--font-mono);
+
+        font-size: 1.1rem;
+
+        min-height: 200px;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                .08
+            );
+
+    }
+
+
+    /* =====================================================
+       CERTIFICATE BUTTON
+    ====================================================== */
+
+    .certificates-section {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        margin-top: 35px;
+
+    }
+
+
+    .certificates-button {
+
+        font-family:
+            var(--font-mono);
+
+        font-size: 1.2rem;
+
+        padding:
+            9px 18px;
+
+        background:
+            var(--sage);
+
+        color:
+            var(--ink);
+
+        border:
+            3px solid var(--ink);
+
+        box-shadow:
+            4px 4px 0 var(--shadow);
+
+        cursor: pointer;
+
+        transition:
+            transform .12s ease,
+            box-shadow .12s ease;
+
+    }
+
+
+    .certificates-button:hover {
+
+        transform:
+            translate(
+                2px,
+                2px
+            );
+
+        box-shadow:
+            2px 2px 0 var(--shadow);
+
+    }
+
+
+    /* =====================================================
+       CERTIFICATE POPUP
+    ====================================================== */
+
+    .certificate-modal {
+
+        display: none;
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 9999;
+
+        background:
+            rgba(
+                0,
+                0,
+                0,
+                .75
+            );
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 20px;
+
+    }
+
+
+    .certificate-modal.show {
+
+        display: flex;
+
+    }
+
+
+    .certificate-box {
+
+        width: 100%;
+
+        max-width: 760px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+        background:
+            var(--card);
+
+        border:
+            3px solid var(--ink);
+
+        box-shadow:
+            8px 8px 0 var(--shadow);
+
+    }
+
+
+    .certificate-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        background:
+            var(--pink);
+
+        border-bottom:
+            3px solid var(--ink);
+
+        padding:
+            9px 12px;
+
+    }
+
+
+    .certificate-header h2 {
+
+        margin: 0;
+
+        font-family:
+            var(--font-display);
+
+        font-size: 1rem;
+
+    }
+
+
+    .certificate-close {
+
+        width: 32px;
+
+        height: 32px;
+
+        border:
+            2px solid var(--ink);
+
+        background:
+            var(--card-light);
+
+        color:
+            var(--ink);
+
+        font-family:
+            var(--font-mono);
+
+        font-size: 1.3rem;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+    }
+
+
+    .certificate-close:hover {
+
+        background:
+            var(--sage);
+
+    }
+
+
+    .certificate-content {
+
+        padding: 20px;
+
+    }
+
+
+    .certificate-intro {
+
+        margin:
+            0 0 20px;
+
+        color:
+            var(--ink-soft);
+
+        font-size:
+            .95rem;
+
+    }
+
+
+    .certificate-list {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+        gap: 20px;
+
+    }
+
+
+    .certificate-item {
+
+        background:
+            var(--card-light);
+
+        border:
+            3px solid var(--ink);
+
+    }
+
+
+    .certificate-item img {
+
+        width: 100%;
+
+        aspect-ratio:
+            4 / 3;
+
+        object-fit: contain;
+
+        background:
+            #ffffff;
+
+        border-bottom:
+            3px solid var(--ink);
+
+    }
+
+
+    .certificate-text {
+
+        padding:
+            12px;
+
+    }
+
+
+    .certificate-text h3 {
+
+        margin:
+            0 0 5px;
+
+        font-family:
+            var(--font-display);
+
+        font-size:
+            .85rem;
+
+        line-height:
+            1.5;
+
+    }
+
+
+    .certificate-text p {
+
+        margin: 0;
+
+        font-size:
+            .9rem;
+
+        color:
+            var(--ink-soft);
+
+        line-height:
+            1.5;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+        border-top:
+            3px solid var(--ink);
+
+        background:
+            var(--card);
+
+        padding:
+            20px 0 26px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .marquee {
+
+        overflow:
+            hidden;
+
+        white-space:
+            nowrap;
+
+        border-top:
+            2px dashed var(--brown);
+
+        border-bottom:
+            2px dashed var(--brown);
+
+        padding:
+            8px 0;
+
+        margin:
+            14px 0;
+
+        font-family:
+            var(--font-mono);
+
+        font-size:
+            1.15rem;
+
+    }
+
+
+    .marquee span {
+
+        display:
+            inline-block;
+
+        padding-left:
+            100%;
+
+        animation:
+            marquee 16s linear infinite;
+
+    }
+
+
+    @keyframes marquee {
+
+        100% {
+
+            transform:
+                translateX(-100%);
+
+        }
+
+    }
+
+
+    .back-top {
+
+        display:
+            inline-block;
+
+        margin-top:
+            16px;
+
+        font-family:
+            var(--font-mono);
+
+        font-size:
+            1rem;
+
+        text-decoration:
+            none;
+
+        border-bottom:
+            2px solid var(--ink);
+
+    }
+
+
+    /* =====================================================
+       TABLET
+    ====================================================== */
+
+    @media (max-width: 760px) {
+
+        .top-navigation {
+
+            gap: 9px;
+
+            padding:
+                22px 14px 8px;
+
+        }
+
+
+        .nav-button {
+
+            min-width:
+                92px;
+
+            padding:
+                8px 13px;
+
+            font-size:
+                1.15rem;
+
+        }
+
+
+        .page-content {
+
+            padding:
+                25px 15px 65px;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PHONE
+    ====================================================== */
+
+    @media (max-width: 520px) {
+
+        .top-navigation {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            width:
+                100%;
+
+            gap:
+                8px;
+
+            padding:
+                18px 12px 8px;
+
+        }
+
+
+        .nav-button {
+
+            width:
+                100%;
+
+            min-width:
+                0;
+
+            font-size:
+                1.1rem;
+
+        }
+
+
+        .nav-button:last-child {
+
+            grid-column:
+                1 / -1;
+
+            width:
+                50%;
+
+            justify-self:
+                center;
+
+        }
+
+
+        .proj-grid {
+
+            grid-template-columns:
+                1fr;
+
+            gap:
+                22px;
+
+        }
+
+
+        .proj-body {
+
+            padding:
+                15px 15px 18px;
+
+        }
+
+
+        .btn {
+
+            font-size:
+                .95rem;
+
+        }
+
+
+        .certificate-list {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .certificate-box {
+
+            max-height:
+                92vh;
+
+        }
+
+
+        .certificate-content {
+
+            padding:
+                15px;
+
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- =====================================================
+     FIVE NAVIGATION BUTTONS
+     
+     🔊 SOUND IS AUTOMATICALLY APPLIED TO ALL OF THESE
+====================================================== -->
+
+<nav
+    class="top-navigation"
+    aria-label="Main navigation"
+>
+
+    <a
+        href="g.html"
+        class="nav-button"
+    >
+        home
+    </a>
+
+
+    <a
+        href="about.html"
+        class="nav-button"
+    >
+        about-me
+    </a>
+
+
+    <a
+        href="work.html"
+        class="nav-button active"
+        aria-current="page"
+    >
+        my-work
+    </a>
+
+
+    <a
+        href="contact.html"
+        class="nav-button"
+    >
+        contact
+    </a>
+
+
+    <a
+        href="faq.html"
+        class="nav-button"
+    >
+        faq
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     PROJECTS CONTENT
+====================================================== -->
+
+<main class="page-content">
+
+    <div class="content-wrapper">
+
+
+        <p class="eyebrow"></p>
+
+
+       <h1 class="section-title projects-title">
+    my projects
+</h1>
+
+<p class="projects-subtitle">
+    ✦ view my certificates below!!!
+</p>
+        <div class="proj-grid">
+
+
+            <!-- =================================================
+                 PROJECT 1
+            ================================================== -->
+
+            
+            <article class="proj-card win">
+
+
+                <div class="win-bar">
+
+                    <span class="win-bar-title">
+                        🎬 
+                    </span>
+
+
+                    <span class="win-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                </div>
+
+
+                <video
+                    class="project-video"
+                    controls
+                    poster="why.png"
+                >
+
+                    <source
+                        src="faculty.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+
+                <div class="proj-body">
+
+
+                    <h2>
+                         University Website Redesign
+                    </h2>
+
+
+                    <p>
+
+                        A video editing project focused on
+                        pacing, visual storytelling and color.
+
+                    </p>
+
+
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            DaVinci Resolve
+                        </span>
+
+                        <span class="tag">
+                            Editing
+                        </span>
+
+                        <span class="tag">
+                            Color
+                        </span>
+
+                    </div>
+
+
+                    <div class="proj-links">
+
+                        <a
+                            class="btn"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            watch project ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+  <!-- =================================================
+                 PROJECT 2
+            ================================================== -->
+
+            <article class="proj-card win">
+
+
+                <div class="win-bar">
+
+                    <span class="win-bar-title">
+                        🌐 
+                    </span>
+
+
+                    <span class="win-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                </div>
+
+
+                <div class="thumb-placeholder a">
+
+                    <img
+                        src="university-.jpg"
+                        alt="University Website Redesign"
+                        class="project-image"
+                    >
+
+                </div>
+
+
+                <div class="proj-body">
+
+
+                    <h2>
+                        University Website Redesign
+                    </h2>
+
+
+                    <p>
+
+                        A full website design for my university,
+                        focused on clear navigation and a
+                        friendlier visual identity.
+
+                    </p>
+
+
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            UI Design
+                        </span>
+
+                        <span class="tag">
+                            Web
+                        </span>
+
+                        <span class="tag">
+                            Figma
+                        </span>
+
+                    </div>
+
+
+                    <div class="proj-links">
+
+                        <a
+                            class="btn"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            live site ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 PROJECT 2
+            ================================================== -->
+
+            <article class="proj-card win">
+
+
+                <div class="win-bar">
+
+                    <span class="win-bar-title">
+                        📱 
+                    </span>
+
+
+                    <span class="win-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                </div>
+
+
+                <div class="thumb-placeholder b">
+
+                    drop your project screenshot here
+
+                </div>
+
+
+                <div class="proj-body">
+
+
+                    <h2>
+                        Figma UI Design
+                    </h2>
+
+
+                    <p>
+
+                        An app and screen design exploration
+                        created in Figma, focusing on clean
+                        layouts and a simple user experience.
+
+                    </p>
+
+
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            Figma
+                        </span>
+
+                        <span class="tag">
+                            Prototyping
+                        </span>
+
+                        <span class="tag">
+                            Mobile
+                        </span>
+
+                    </div>
+
+
+                    <div class="proj-links">
+
+                        <a
+                            class="btn"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            figma file ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 PROJECT 3
+            ================================================== -->
+
+            <article class="proj-card win">
+
+
+                <div class="win-bar">
+
+                    <span class="win-bar-title">
+                        💻 
+                    </span>
+
+
+                    <span class="win-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                </div>
+
+
+                <div class="thumb-placeholder a">
+
+                    drop your project screenshot here
+
+                </div>
+
+
+                <div class="proj-body">
+
+
+                    <h2>
+                        Website Project
+                    </h2>
+
+
+                    <p>
+
+                        A responsive website project built
+                        using HTML, CSS and JavaScript.
+
+                    </p>
+
+
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JavaScript
+                        </span>
+
+                    </div>
+
+
+                    <div class="proj-links">
+
+                        <a
+                            class="btn"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            view project ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 PROJECT 4 — VIDEO
+            ================================================== -->
+
+            <article class="proj-card win">
+
+
+                <div class="win-bar">
+
+                    <span class="win-bar-title">
+                        🎬 fac.mp4
+                    </span>
+
+
+                    <span class="win-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                </div>
+
+
+                <video
+                    class="project-video"
+                    controls
+                    poster="video-thumbnail.jpg"
+                >
+
+                    <source
+                        src="facu.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support video.
+
+                </video>
+
+
+                <div class="proj-body">
+
+
+                    <h2>
+                         University Website Redesign
+                    </h2>
+
+
+                    <p>
+
+                        A video editing project focused on
+                        pacing, visual storytelling and color.
+
+                    </p>
+
+
+                    <div class="tag-row">
+
+                        <span class="tag">
+                            DaVinci Resolve
+                        </span>
+
+                        <span class="tag">
+                            Editing
+                        </span>
+
+                        <span class="tag">
+                            Color
+                        </span>
+
+                    </div>
+
+
+                    <div class="proj-links">
+
+                        <a
+                            class="btn"
+                            href="#"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            watch project ↗
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 ADD PROJECT PLACEHOLDER
+            ================================================== -->
+
+            <div class="proj-card--ghost">
+
+                + add your next project here
+
+                <br>
+
+                copy a project card above &amp; edit it
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CERTIFICATES BUTTON
+        ================================================== -->
+
+        <div class="certificates-section">
+
+            <button
+                class="certificates-button"
+                id="openCertificates"
+                type="button"
+            >
+
+                view my certificates ↗
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     CERTIFICATE POPUP
+     
+     EASY TO EDIT
+====================================================== -->
+
+<div
+    class="certificate-modal"
+    id="certificateModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="certificate-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="certificateTitle"
+    >
+
+
+        <div class="certificate-header">
+
+
+            <h2 id="certificateTitle">
+                my certificates
+            </h2>
+
+
+            <button
+                class="certificate-close"
+                id="closeCertificates"
+                type="button"
+                aria-label="Close certificates"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+        <div class="certificate-content">
+
+
+            <p class="certificate-intro">
+
+                A few certificates of courses and internships I have completed.
+                
+
+            </p>
+
+
+            <div class="certificate-list">
+
+
+                <!-- =================================================
+                     CERTIFICATE 1
+                     
+                     CHANGE:
+                     certificate1.jpg
+                     TITLE
+                     DESCRIPTION
+                ================================================== -->
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="3.png"
+                        alt="Google UX Design Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            Google UX Design
+                        </h3>
+
+
+                        <p>
+
+                            Certificate focused on UX research,
+                            wireframing, prototyping and
+                            user-centered design.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CERTIFICATE 2
+                ================================================== -->
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="5.png"
+                        alt="UI UX Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            UI/UX Design
+                        </h3>
+
+
+                        <p>
+
+                            A design course covering interface
+                            design, layouts and visual design.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CERTIFICATE 3
+                ================================================== -->
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="4.png"
+                        alt="Web Development Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p>
+
+                            Coursework covering HTML, CSS,
+                            JavaScript and responsive websites.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CERTIFICATE 4
+                ================================================== -->
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="1.png"
+                        alt="Additional Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            Additional Certificate
+                        </h3>
+
+
+                        <p>
+
+                            Another learning achievement or
+                            certification I have completed.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="2.png"
+                        alt="Web Development Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p>
+
+                            Coursework covering HTML, CSS,
+                            JavaScript and responsive websites.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="certificate-item">
+
+
+                    <img
+                        src="6.png"
+                        alt="Web Development Certificate"
+                    >
+
+
+                    <div class="certificate-text">
+
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p>
+
+                            Coursework covering HTML, CSS,
+                            JavaScript and responsive websites.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+
+    <div
+        class="marquee"
+        aria-hidden="true"
+    >
+
+        <span>
+
+            ★ thanks for stopping by ★
+            portfolio.exe — est. 2026 ★
+            greetings from the internet ★
+            stay curious ★
+            thanks for stopping by ★
+
+        </span>
+
+    </div>
+
+
+    <a
+        class="back-top"
+        href="#"
+    >
+        back to top ↑
+    </a>
+</footer>
+
+
+<!-- =====================================================
+     🔊 SOUND SYSTEM
+     
+     IMPORTANT:
+     
+     Put your sound file in the SAME folder as this HTML.
+     
+     Example:
+     
+     work.html
+     click.mp3
+     
+     If you want to use another file, change ONLY:
+     
+     const CLICK_SOUND = "click.mp3";
+     
+     to:
+     
+     const CLICK_SOUND = "my-sound.wav";
+     
+====================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       🔊 CHANGE YOUR SOUND HERE
+    ====================================================== */
+
+    const CLICK_SOUND = "click.mp3";
+
+
+    /* =====================================================
+       CREATE AUDIO
+    ====================================================== */
+
+    const clickSound = new Audio(CLICK_SOUND);
+
+    clickSound.preload = "auto";
+
+    clickSound.volume = 0.6;
+
+
+    /* =====================================================
+       PLAY SOUND
+    ====================================================== */
+
+    function playClickSound() {
+
+        clickSound.pause();
+
+        clickSound.currentTime = 0;
+
+        clickSound.play().catch(function(error) {
+
+            console.log(
+                "Could not play click sound:",
+                error
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       🔊 HEADER / NAVIGATION SOUND
+       
+       Automatically applies to:
+       
+       HOME
+       ABOUT-ME
+       MY-WORK
+       CONTACT
+       FAQ
+    ====================================================== */
+
+    document
+        .querySelectorAll(".top-navigation a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    playClickSound();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       🔊 PROJECT LINKS SOUND
+    ====================================================== */
+
+    document
+        .querySelectorAll(".proj-links a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    playClickSound();
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       CERTIFICATE ELEMENTS
+    ====================================================== */
+
+    const openCertificates =
+        document.getElementById(
+            "openCertificates"
+        );
+
+
+    const closeCertificates =
+        document.getElementById(
+            "closeCertificates"
+        );
+
+
+    const certificateModal =
+        document.getElementById(
+            "certificateModal"
+        );
+
+
+    /* =====================================================
+       🔊 CERTIFICATE BUTTON SOUND + OPEN
+    ====================================================== */
+
+    openCertificates.addEventListener(
+        "click",
+        function() {
+
+            playClickSound();
+
+            certificateModal.classList.add(
+                "show"
+            );
+
+            certificateModal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+    );
+
+
+    /* =====================================================
+       🔊 CLOSE BUTTON SOUND + CLOSE
+    ====================================================== */
+
+    closeCertificates.addEventListener(
+        "click",
+        function() {
+
+            playClickSound();
+
+            certificateModal.classList.remove(
+                "show"
+            );
+
+            certificateModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow =
+                "";
+
+        }
+    );
+
+
+    /* =====================================================
+       CLICK OUTSIDE CERTIFICATE WINDOW
+    ====================================================== */
+
+    certificateModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target ===
+                certificateModal
+            ) {
+
+                certificateModal.classList.remove(
+                    "show"
+                );
+
+                certificateModal.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.style.overflow =
+                    "";
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Escape" &&
+                certificateModal.classList.contains(
+                    "show"
+                )
+            ) {
+
+                certificateModal.classList.remove(
+                    "show"
+                );
+
+                certificateModal.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.style.overflow =
+                    "";
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       🔊 BACK TO TOP SOUND
+    ====================================================== */
+
+    const backTop =
+        document.querySelector(
+            ".back-top"
+        );
+
+
+    backTop.addEventListener(
+        "click",
+        function() {
+
+            playClickSound();
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>

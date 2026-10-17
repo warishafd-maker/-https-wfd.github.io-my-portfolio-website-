@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me — Warisha Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =====================================================
+   COLORS
+===================================================== */
+
+:root {
+
+    --bg: #201d58;
+
+    --card: #fffffb;
+
+    --card-light: #d8d8d6;
+
+    --pink: #97afb9;
+
+    --pink-deep: #97afb9;
+
+    --brown: #66534b;
+
+    --sage: #dda9a5;
+
+    --ink: #302f2d;
+
+    --ink-soft: #555b5b;
+
+    --shadow: #274f50;
+
+    --white: #f4f3ef;
+
+    --font-display: 'Silkscreen', monospace;
+
+    --font-mono: 'VT323', monospace;
+
+    --font-body: 'Quicksand', sans-serif;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.10) 1px,
+            transparent 1.4px
+        ) 0 0 / 22px 22px,
+
+        var(--bg);
+
+    color: var(--ink);
+
+    font-family: var(--font-body);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: var(--pink);
+    color: var(--ink);
+}
+
+
+/* =====================================================
+   NAVIGATION BUTTONS
+===================================================== */
+
+.top-navigation {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 28px 20px 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.nav-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 8px 17px;
+
+    background: var(--card);
+
+    color: var(--ink);
+
+    border: 3px solid var(--ink);
+
+    box-shadow: 4px 4px 0 var(--shadow);
+
+    text-decoration: none;
+
+    font-family: var(--font-mono);
+
+    font-size: 1.25rem;
+
+    line-height: 1;
+
+    transition:
+        transform .12s ease,
+        box-shadow .12s ease,
+        background .12s ease;
+}
+
+
+.nav-button:hover {
+
+    background: var(--card-light);
+
+    transform:
+        translate(2px, 2px);
+
+    box-shadow:
+        2px 2px 0 var(--shadow);
+}
+
+
+.nav-button.active {
+
+    background: var(--pink);
+
+    box-shadow:
+        4px 4px 0 var(--shadow);
+}
+
+
+.nav-button.active:hover {
+
+    background: var(--pink);
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.page-content {
+
+    width: 100%;
+
+    min-height: 75vh;
+
+    padding: 28px 22px 90px;
+}
+
+
+.content-wrapper {
+
+    width: 100%;
+
+    max-width: 980px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.win {
+
+    background: var(--card);
+
+    border: 3px solid var(--ink);
+
+    box-shadow:
+        7px 7px 0 var(--shadow);
+}
+
+
+/* =====================================================
+   WINDOW BAR
+===================================================== */
+
+.win-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink) 0%,
+            var(--pink-deep) 100%
+        );
+
+    border-bottom: 3px solid var(--ink);
+}
+
+
+.win-bar-title {
+
+    font-family: var(--font-mono);
+
+    font-size: 1.25rem;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.win-dots {
+
+    display: flex;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+.win-dots span {
+
+    width: 12px;
+
+    height: 12px;
+
+    border: 2px solid var(--ink);
+
+    background: var(--card);
+}
+
+
+.win-dots span:nth-child(3) {
+
+    background: var(--sage);
+}
+
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.section-inner {
+
+    padding: 42px;
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, .75fr)
+        minmax(0, 1.25fr);
+
+    gap: 48px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.polaroid-placeholder {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 340px;
+}
+
+
+.frame {
+
+    width: 250px;
+
+    min-height: 290px;
+
+    padding: 18px 18px 55px;
+
+    background: var(--white);
+
+    border: 3px solid var(--ink);
+
+    box-shadow:
+        7px 7px 0 var(--shadow);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    font-family: var(--font-mono);
+
+    font-size: 1.25rem;
+
+    color: var(--ink-soft);
+
+    transform: rotate(-3deg);
+
+    position: relative;
+}
+
+
+.about-photo {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    border: 2px solid var(--ink);
+}
+
+
+/* =====================================================
+   TAPE
+===================================================== */
+
+.tape {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    width: 95px;
+
+    height: 28px;
+
+    background: rgba(
+        221,
+        169,
+        165,
+        .75
+    );
+
+    border: 2px solid var(--ink);
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.eyebrow {
+
+    font-family: var(--font-mono);
+
+    color: var(--pink-deep);
+
+    font-size: 1.2rem;
+
+    margin: 0 0 5px;
+}
+
+
+.section-title {
+
+    font-family: var(--font-display);
+
+    font-size:
+        clamp(
+            1.35rem,
+            3vw,
+            2rem
+        );
+
+    line-height: 1.5;
+
+    margin:
+        0 0 22px;
+}
+
+
+.about-text {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin:
+        0 0 20px;
+}
+
+
+/* =====================================================
+   QUICK FACTS
+===================================================== */
+
+.quick-facts {
+
+    list-style: none;
+
+    margin:
+        22px 0 0;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 10px 20px;
+
+    font-family: var(--font-mono);
+
+    font-size: 1.05rem;
+}
+
+
+.quick-facts li {
+
+    padding:
+        8px 10px;
+
+    border-left:
+        3px solid var(--pink-deep);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .18
+        );
+}
+
+
+/* =====================================================
+   ABOUT ACTION BUTTONS
+===================================================== */
+
+.about-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-family: var(--font-mono);
+
+    font-size: 1.05rem;
+
+    padding:
+        7px 14px;
+
+    background: var(--pink);
+
+    color: var(--ink);
+
+    border:
+        3px solid var(--ink);
+
+    box-shadow:
+        3px 3px 0 var(--ink);
+
+    text-decoration: none;
+
+    transition:
+        transform .12s ease,
+        box-shadow .12s ease;
+}
+
+
+.btn:hover {
+
+    transform:
+        translate(
+            1.5px,
+            1.5px
+        );
+
+    box-shadow:
+        1.5px 1.5px 0 var(--ink);
+}
+
+
+.btn--ghost {
+
+    background: var(--card-light);
+}
+
+
+/* =====================================================
+   SECOND CARD — SKILLS
+===================================================== */
+
+.skills-card {
+
+    margin-top: 30px;
+
+    background: var(--card);
+
+    border: 3px solid var(--ink);
+
+    box-shadow:
+        7px 7px 0 var(--shadow);
+}
+
+
+.skills-inner {
+
+    padding: 30px 42px 35px;
+}
+
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   DEVELOPMENT / TOOLS SECTION
+===================================================== */
+
+.skill-section {
+
+    min-width: 0;
+}
+
+
+.skill-title {
+
+    font-family: var(--font-mono);
+
+    font-size: 1.25rem;
+
+    margin:
+        0 0 12px;
+
+    color: var(--ink);
+
+    letter-spacing: .5px;
+}
+
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.tag-row {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 0;
+}
+
+
+.tag {
+
+    font-family: var(--font-mono);
+
+    font-size: 1rem;
+
+    background: var(--sage);
+
+    border: 2px solid var(--ink);
+
+    padding:
+        3px 10px;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    border-top:
+        3px dotted var(--ink);
+
+    background:
+        var(--card);
+
+    padding:
+        12px 0 16px;
+
+    text-align: center;
+}
+
+
+.marquee {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border-top:
+        2px dashed var(--brown);
+
+    border-bottom:
+        2px dashed var(--brown);
+
+    padding:
+        8px 0;
+
+    margin:
+        14px 0;
+
+    font-family: var(--font-mono);
+
+    font-size: 1.15rem;
+}
+
+
+.marquee span {
+
+    display: inline-block;
+
+    padding-left: 100%;
+
+    animation:
+        marquee 16s linear infinite;
+}
+
+
+@keyframes marquee {
+
+    100% {
+
+        transform:
+            translateX(-100%);
+    }
+}
+
+
+.back-top {
+
+    display: inline-block;
+
+    margin-top: 16px;
+
+    font-family: var(--font-mono);
+
+    font-size: 1rem;
+
+    text-decoration: none;
+
+    border-bottom:
+        2px solid var(--ink);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .section-inner {
+
+        padding: 35px;
+    }
+
+
+    .about-grid {
+
+        gap: 35px;
+    }
+
+
+    .skills-inner {
+
+        padding:
+            28px 35px 32px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+
+    .top-navigation {
+
+        gap: 9px;
+
+        padding:
+            22px 14px 8px;
+    }
+
+
+    .nav-button {
+
+        min-width: 92px;
+
+        padding:
+            8px 13px;
+
+        font-size: 1.15rem;
+    }
+
+
+    .page-content {
+
+        padding:
+            25px 15px 65px;
+    }
+
+
+    .section-inner {
+
+        padding:
+            28px 20px;
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .polaroid-placeholder {
+
+        min-height: 300px;
+    }
+
+
+    .frame {
+
+        width: 230px;
+
+        min-height: 270px;
+    }
+
+
+    /* SECOND CARD */
+
+    .skills-inner {
+
+        padding:
+            25px 20px 30px;
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .top-navigation {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        width: 100%;
+
+        gap: 8px;
+
+        padding:
+            18px 12px 8px;
+    }
+
+
+    .nav-button {
+
+        width: 100%;
+
+        min-width: 0;
+
+        font-size: 1.1rem;
+    }
+
+
+    .nav-button:last-child {
+
+        grid-column:
+            1 / -1;
+
+        width:
+            50%;
+
+        justify-self: center;
+    }
+
+
+    .quick-facts {
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+
+    .frame {
+
+        width: 210px;
+
+        min-height: 250px;
+    }
+
+
+    .about-photo {
+
+        height: 195px;
+    }
+
+
+    .skills-card {
+
+        margin-top: 22px;
+    }
+
+
+    .skills-inner {
+
+        padding:
+            22px 15px 26px;
+    }
+
+
+    .skill-title {
+
+        font-size:
+            1.15rem;
+    }
+
+
+    .tag {
+
+        font-size:
+            .95rem;
+
+        padding:
+            3px 8px;
+    }
+
+
+    .about-actions {
+
+        flex-direction: column;
+    }
+
+
+    .btn {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .top-navigation {
+
+        gap: 7px;
+
+        padding:
+            15px 9px 7px;
+    }
+
+
+    .nav-button {
+
+        font-size:
+            1rem;
+
+        padding:
+            7px 5px;
+    }
+
+
+    .page-content {
+
+        padding:
+            15px 8px 45px;
+    }
+
+
+    .section-inner {
+
+        padding:
+            22px 13px;
+    }
+
+
+    .frame {
+
+        width:
+            195px;
+
+        min-height:
+            235px;
+    }
+
+
+    .about-photo {
+
+        height:
+            180px;
+    }
+
+
+    .skills-inner {
+
+        padding:
+            20px 12px 24px;
+    }
+
+
+    .tag {
+
+        font-size:
+            .9rem;
+    }
+
+}
+
+
+/* =====================================================
+   SHORT HEIGHT SCREENS
+===================================================== */
+
+@media (max-height: 600px) {
+
+    .page-content {
+
+        padding-bottom:
+            50px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+    }
+
+
+    .marquee span {
+
+        animation:
+            none;
+    }
+
+
+    .nav-button,
+    .btn {
+
+        transition:
+            none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav
+    class="top-navigation"
+    aria-label="Main navigation"
+>
+
+    <a
+        href="g.html"
+        class="nav-button"
+    >
+        home
+    </a>
+
+
+    <a
+        href="about.html"
+        class="nav-button active"
+        aria-current="page"
+    >
+        about-me
+    </a>
+
+
+    <a
+        href="work.html"
+        class="nav-button"
+    >
+        my-work
+    </a>
+
+
+    <a
+        href="contact.html"
+        class="nav-button"
+    >
+        contact
+    </a>
+
+
+    <a
+        href="faq.html"
+        class="nav-button"
+    >
+        faq
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="page-content">
+
+
+<div class="content-wrapper">
+
+
+<!-- =====================================================
+     CARD 1 — ABOUT ME
+===================================================== -->
+
+<section
+    id="about"
+    aria-label="About Me"
+>
+
+
+<div class="win">
+
+
+<!-- WINDOW BAR -->
+
+<div class="win-bar">
+
+<span class="win-bar-title">
+
+📁 .txt
+
+</span>
+
+
+<span class="win-dots">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</span>
+
+</div>
+
+
+<!-- ABOUT CONTENT -->
+
+<div class="section-inner about-grid">
+
+
+<!-- =================================================
+     PHOTO
+================================================== -->
+
+<div class="polaroid-placeholder">
+
+
+<div class="tape"></div>
+
+
+<div class="frame">
+
+<img
+    src="wah.jpg"
+    alt="Warisha"
+    class="about-photo"
+>
+
+</div>
+
+
+</div>
+
+
+<!-- =================================================
+     ABOUT TEXT
+================================================== -->
+
+<div>
+
+
+<p class="eyebrow">
+
+hello, I'm
+
+</p>
+
+
+<h1 class="section-title">
+
+software <br>
+engineering student,
+
+</h1>
+
+
+<p class="about-text">
+
+I'm a third-year university student
+based in Pakistan, working toward a
+career in UI/UX design.
+
+</p>
+
+
+<p class="about-text">
+
+I'm currently going through the UX Design
+practice.
+
+</p>
+
+
+<p class="about-text">
+
+I also have a foundation in HTML/CSS
+and databases (SQL), which gives me
+a practical sense of what's realistic
+to build — not just what looks nice.
+
+</p>
+
+
+<!-- QUICK FACTS -->
+
+<ul class="quick-facts">
+
+<li>
+3rd-year student
+</li>
+
+<li>
+Pakistan
+</li>
+
+</ul>
+
+
+<!-- ACTION BUTTONS -->
+
+<div class="about-actions">
+
+
+<a
+    class="btn"
+    href="work.html"
+>
+
+view my work ✦
+
+</a>
+
+
+<a
+    class="btn btn--ghost"
+    href="contact.html"
+>
+
+contact me →
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CARD 2 — DEVELOPMENT + TOOLS
+===================================================== -->
+
+<section
+    class="skills-card"
+    aria-label="Development and Tools"
+>
+
+
+<!-- WINDOW BAR -->
+
+<div class="win-bar">
+
+<span class="win-bar-title">
+
+📁 skills.txt
+
+</span>
+
+
+<span class="win-dots">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</span>
+
+</div>
+
+
+<!-- SKILLS CONTENT -->
+
+<div class="skills-inner">
+
+
+<div class="skills-grid">
+
+
+<!-- =================================================
+     DEVELOPMENT
+================================================== -->
+
+<div class="skill-section">
+
+
+<h2 class="skill-title">
+
+DEVELOPMENT:
+
+</h2>
+
+
+<div class="tag-row">
+
+
+<span class="tag">
+java script
+</span>
+
+
+<span class="tag">
+HTML/CSS
+</span>
+
+
+<span class="tag">
+SQL
+</span>
+
+
+<span class="tag">
+python
+</span>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =================================================
+     TOOLS
+================================================== -->
+
+<div class="skill-section">
+
+
+<h2 class="skill-title">
+
+TOOLS:
+
+</h2>
+
+
+<div class="tag-row">
+
+
+<span class="tag">
+Figma
+</span>
+
+
+<span class="tag">
+Canva
+</span>
+
+
+<span class="tag">
+Adobe photoshop
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div
+    class="marquee"
+    aria-hidden="true"
+>
+
+
+<span>
+
+★ thanks for stopping by ★
+made with love ★
+warisha.exe — est. 2026 ★
+thanks for stopping by ★
+made with love ★
+warisha.exe — est. 2026 ★
+
+</span>
+
+
+</div>
+
+
+<a
+    class="back-top"
+    href="#"
+>
+
+back to top ↑
+
+</a>
+
+
+</footer>
+
+
+<!-- =====================================================
+     SOUND EFFECTS
+===================================================== -->
+
+<audio
+    id="headerSound"
+    preload="auto"
+>
+
+<source
+    src="click.mp3"
+    type="audio/mpeg"
+>
+
+</audio>
+
+
+<audio
+    id="clickSound"
+    preload="auto"
+>
+
+<source
+    src="click2.mp3"
+    type="audio/mpeg"
+>
+
+</audio>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   SOUND SETTINGS
+===================================================== */
+
+const headerSound =
+    document.getElementById("headerSound");
+
+
+const clickSound =
+    document.getElementById("clickSound");
+
+
+/* =====================================================
+   HEADER SOUND
+===================================================== */
+
+function playHeaderSound() {
+
+    if (!headerSound) {
+        return;
+    }
+
+
+    headerSound.currentTime = 0;
+
+    headerSound.volume = 0.5;
+
+
+    headerSound.play().catch(function(error) {
+
+        console.log(
+            "Header sound could not play:",
+            error
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   NORMAL SOUND
+===================================================== */
+
+function playClickSound() {
+
+    if (!clickSound) {
+        return;
+    }
+
+
+    clickSound.currentTime = 0;
+
+    clickSound.volume = 0.5;
+
+
+    clickSound.play().catch(function(error) {
+
+        console.log(
+            "Normal sound could not play:",
+            error
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   CLICK SOUND HANDLER
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+
+        const clickable =
+            event.target.closest(
+                "a, button"
+            );
+
+
+        if (!clickable) {
+            return;
+        }
+
+
+        /* =============================================
+           HEADER NAVIGATION
+        ============================================== */
+
+        if (
+            clickable.classList.contains(
+                "nav-button"
+            )
+        ) {
+
+            event.preventDefault();
+
+
+            const destination =
+                clickable.getAttribute(
+                    "href"
+                );
+
+
+            playHeaderSound();
+
+
+            setTimeout(
+                function() {
+
+
+                    if (
+                        destination &&
+                        destination !== "#"
+                    ) {
+
+                        window.location.href =
+                            destination;
+
+                    }
+
+
+                },
+                120
+            );
+
+
+            return;
+        }
+
+
+        /* =============================================
+           BACK TO TOP
+        ============================================== */
+
+        if (
+            clickable.classList.contains(
+                "back-top"
+            )
+        ) {
+
+            event.preventDefault();
+
+
+            playClickSound();
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+            return;
+        }
+
+
+        /* =============================================
+           NORMAL LINKS
+        ============================================== */
+
+        if (
+            clickable.tagName.toLowerCase() ===
+            "a"
+        ) {
+
+
+            const destination =
+                clickable.getAttribute(
+                    "href"
+                );
+
+
+            if (
+                destination &&
+                destination !== "#" &&
+                !destination.startsWith(
+                    "javascript:"
+                )
+            ) {
+
+
+                event.preventDefault();
+
+
+                playClickSound();
+
+
+                setTimeout(
+                    function() {
+
+
+                        window.location.href =
+                            destination;
+
+
+                    },
+                    120
+                );
+
+
+                return;
+            }
+
+
+            playClickSound();
+
+
+            return;
+        }
+
+
+        /* =============================================
+           OTHER BUTTONS
+        ============================================== */
+
+        if (
+            clickable.tagName.toLowerCase() ===
+            "button"
+        ) {
+
+            playClickSound();
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>
